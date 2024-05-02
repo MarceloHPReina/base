@@ -10,13 +10,6 @@ function mostraSenha(){
 
 //Capturar o valor de usuário e senha para enviar para o Model;
 function conectar(){
-var user = document.getElementById('usuario');
-var usuario = user.value;
-var pass = document.getElementById('senha')
-var senha = pass.value;
-console.log(senha);
-
-if(usuario !== '' && senha !== ''){
     // Cria um objeto de dados para enviar via AJAX
     var dados = {
         usuario: usuario,
@@ -30,14 +23,18 @@ if(usuario !== '' && senha !== ''){
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // Resposta recebida do servidor
-            console.log(xhr.responseText);
+            var resposta = JSON.parse(xhr.responseText);
+            
+            // Verifica se o usuário foi autenticado com sucesso
+            if (resposta.autenticado) {
+                // Redireciona para home.php
+                window.location.href = 'home.php';
+            } else {
+                // Redireciona para contato.php
+                window.location.href = 'not-found.php';
+            }
         }
     };
     xhr.send('usuario=' + encodeURIComponent(usuario) + '&senha=' + encodeURIComponent(senha));
-
-}else{
-    alert("Usuário ou senha estão vazios")
-}
-
 
 }

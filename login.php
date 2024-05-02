@@ -1,5 +1,6 @@
 <?
 	include_once '\model\connect.php';
+	
 ?>
 
 <!DOCTYPE HTML>
@@ -28,7 +29,7 @@
         <h1>Seja bem vindo! </h1>
         <div class="w3ls-login box box--big">
 		<!-- form starts here -->
-		<form>
+		<form method="POST">
 			<div class="agile-field-txt">
 				<label><i class="fa fa-user" aria-hidden="true"></i> Usuário </label>
 				<input type="text" name="name" placeholder="Digite seu usuário" required="" id ="usuario" />
