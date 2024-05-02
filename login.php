@@ -1,3 +1,7 @@
+<?
+	include_once '\model\connect.php';
+?>
+
 <!DOCTYPE HTML>
 <html lang="PT-BR">
     <head>
@@ -11,8 +15,8 @@
         <!-- //Meta-Tags -->
         <!-- Stylesheets -->
         <link href="styles\styles.css" rel="stylesheet">
-        <!-- <link href="../styles/font-awesome.css" rel='stylesheet' type='text/css' />
-        <script type="text/javascript" src="../Controllers/indexControllers.js" > </script> -->
+        <!-- <link href="../styles/font-awesome.css" rel='stylesheet' type='text/css' /> -->
+        <script type="text/javascript" src="controller\login_controller.js" > </script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <!--// Stylesheets -->
         <!--fonts-->
@@ -24,14 +28,14 @@
         <h1>Seja bem vindo! </h1>
         <div class="w3ls-login box box--big">
 		<!-- form starts here -->
-		<form action="../Model/conexaoDAO.php" method="POST">
+		<form>
 			<div class="agile-field-txt">
 				<label><i class="fa fa-user" aria-hidden="true"></i> Usuário </label>
-				<input type="text" name="name" placeholder="Digite seu usuário" required="" />
+				<input type="text" name="name" placeholder="Digite seu usuário" required="" id ="usuario" />
 			</div>
 			<div class="agile-field-txt">
 				<label><i class="fa fa-unlock-alt" aria-hidden="true"></i> Senha </label>
-				<input type="password" name="password" placeholder="Digite sua senha" required="" id="myInput" />
+				<input type="password" name="password" placeholder="Digite sua senha" required="" id="senha" />
 				<div class="agile_label">
 					<input id="check3" name="check3" type="checkbox" value="Mostrar Senha" onclick="mostraSenha()">
 					<label class="check" for="check3">Mostrar a senha</label>
@@ -41,7 +45,7 @@
 				</div>
 			</div>
 			<div class="form-group" >
-    			<button type="submit" style='text-align:center;' name="acessar" class="btn btn-primary">Login</button>
+    			<button style='text-align:center;' name="acessar" class="btn btn-primary" onclick="conectar()">Login</button>
 			</div>
 
 			<!-- <input type="submit" value="LOGIN"> -->
@@ -50,7 +54,7 @@
 	<!-- //form ends here -->
 	<!--copyright-->
 	<div class="copy-wthree">
-		<p style='text-align:center;'>© 2023 MyHomeTeacher. Todos os direitos reservados | Desenvolvido por
+		<p style='text-align:center;'>© 2024 MyHomeTeacher. Todos os direitos reservados | Desenvolvido por
 			<a href="http://www.tiourudi.com.br/" target="_blank">Tio Urudi</a>
 		</p>
 	</div>
